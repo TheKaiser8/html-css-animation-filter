@@ -78,7 +78,6 @@
 }
 .ex-10-icon {
     font-size: 60px;
-    position: relative;
     animation-name: spin;
     animation-duration: 2s;
     animation-timing-function: linear;
@@ -86,11 +85,25 @@
 }
 @keyframes spin {
     0% {
-        transform: rotate(1turn);
+        transform: rotate(360deg); /* oppure rotate(1turn) */
     }
 }
 .ex-11-icon {
     font-size: 60px;
+}
+.ex-11-icon:hover {
+    animation: spin-clockwise 2s linear;
+}
+@keyframes spin-clockwise {
+    0% {
+        transform: rotate(90deg);
+    }
+    90% {                           /* la percentuale indica la velocità di rotazione */
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 .ex-12-button, .ex-13-button {
     position: relative;
